@@ -5,11 +5,8 @@ import TotalCategorias from './TotalCategorias';
 function ContentRowCenter(){
     return (
         <div className="row">
-            
             <LastBook />
-
             <TotalCategorias />
-
         </div>
     )
 }

@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 import imagenFondo from '../assets/images/usuarios.png';
 
 function TotalUsuarios(){
-    const [users, setUsers]  = useState([]);
+const [users, setUsers]  = useState([]);
 	
 useEffect(() => {
 	 console.log("se monto el componente")
 	 fetch(` http://localhost:3030/api/users`)
 		.then(response => response.json())
 		.then(data => {
-			console.log("data")
+			console.log("data de usuarios")
 			console.log(data)
 			setUsers(data.users)})
 		.catch(error => console.error(error));
 }, [])
 
-    return(
+return(
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
@@ -37,10 +37,8 @@ useEffect(() => {
 							</li>
 						)			
 					})
-				}
-					
-			</ul>		
-               
+				}					
+			    </ul>		               
             </div>
         </div>
     )

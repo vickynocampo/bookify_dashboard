@@ -1,49 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SmallCard from './SmallCard';
 
-/*  Cada set de datos es un objeto literal */
-
-/* <!-- Movies in DB --> */
-
-let booksInDB = {
-    title: 'Libros en Base de Datos',
-    color: 'primary', 
-    cuantity: 211,
-    icon: 'fa-clipboard-list'
-}
-
-/* <!-- Total awards --> */
-
-let totalAwards = {
-    title:' Usuarios en Base de Datos', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
-
-/* <!-- Actors quantity --> */
-
-let actorsQuantity = {
-    title:'Categorias en Base de Datos' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
-}
-
-let cartProps = [booksInDB, totalAwards, actorsQuantity];
-
 function ContentRowBooks(){
+   const [books, setBooks]  = useState([]);
+   useEffect(() => {
+         console.log("se monto el componente")
+         fetch(`http://localhost:3030/api/products/`)
+            .then(response => response.json())
+            .then(data => {
+                console.log("data de libros")
+                console.log(data)
+                setBooks(data)})
+            .catch(error => console.error(error));
+    }, [])
+  const [categories, setCategories]  = useState([]);
+	
+  useEffect(() => {
+     console.log("se monto el componente")
+     fetch(`http://localhost:3030/api/products/`)
+      .then(response => response.json())
+      .then(data => {
+        console.log("data de categorias")
+        console.log(data)
+        setCategories(data)})
+      .catch(error => console.error(error));
+  }, [])
 
-    return (
-    
+  const [users, setUsers]  = useState([]);
+	
+  useEffect(() => {
+       console.log("se monto el componente")
+       fetch(` http://localhost:3030/api/users`)
+          .then(response => response.json())
+          .then(data => {
+              console.log("data de usuarios")
+              console.log(data)
+              setUsers(data)})
+          .catch(error => console.error(error));
+  }, [])
+
+  let cartProps = [books, categories, users];
+  console.log("cartProps")
+  console.log(cartProps)
+  return (
         <div className="row">
-            
             {cartProps.map( (book, i) => {
-
-                return <SmallCard {...book} key={i}/>
-            
+            return <SmallCard {...book} key={i}/>
             })}
-
         </div>
     )
 }
