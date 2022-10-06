@@ -5,7 +5,8 @@ import TotalCategorias from './TotalCategorias';
 import LastBook from './LastBook';
 import TotalUsuarios from './TotalUsuarios';
 import ContentRowBooks from './ContentRowBooks';
-import SearchBooks from './SearchBooks';
+import ListBooks from './ListBooks';
+import Search from './Search';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
@@ -27,13 +28,21 @@ function SideBar(){
                 <hr className="sidebar-divider"/>
                 <div className="sidebar-heading">Acciones</div>     
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/SearchBooks">
-                    <span>Libros</span></Link>
+                <Link className="nav-link" to="/ListBooks">
+                    <span>Listado Libros</span></Link>
+                </li>
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/ListBooks">
+                    <span>Detalle Libro</span></Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/TotalUsuarios">                    
                         <span>Usuarios</span></Link>
-                </li>        
+                </li>   
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/ListBooks">
+                    <span>Detalle Usuario</span></Link>
+                </li>     
                 <li className="nav-item">
                 <Link className="nav-link" to="/TotalCategorias">                                      
                         <span>Categorias</span>
@@ -49,6 +58,10 @@ function SideBar(){
                         <span>Totales Generales</span></Link>
                 </li>
                 <hr className="sidebar-divider d-none d-md-block"/>
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/Search">                   
+                        <span>Buscador</span></Link>
+                </li>
             </ul>
             <Switch>
                 <Route exact path="/">
@@ -66,8 +79,11 @@ function SideBar(){
                 <Route path="/ContentRowBooks">
                     <ContentRowBooks />
                 </Route>
-                <Route path="/SearchBooks">
-                    <SearchBooks />
+                <Route path="/ListBooks">
+                    <ListBooks />
+                </Route>
+                <Route path="/Search">
+                    <Search />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

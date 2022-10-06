@@ -4,13 +4,13 @@ function TotalCategorias() {
 const [categories, setCategories]  = useState([]);
 	
 useEffect(() => {
-     console.log("se monto el componente")
+     console.log("se monto el componente para categorias")
      fetch(`http://localhost:3030/api/products/`)
       .then(response => response.json())
       .then(data => {
         console.log("data de categorias")
         console.log(data)
-        setCategories(data.countByCategory)})
+        setCategories(data.countByCategory.allCategories)})
       .catch(error => console.error(error));
   }, [])
   
@@ -27,7 +27,7 @@ return (
                 <div className="row">
                  <div className="col-lg-6 mb-4">
                    <div className="card bg-dark text-white shadow">							    
-								      <h5 key={i}>{category.name}</h5>		
+								      {/* <h5 key={i}>{category.allCategories.name}</h5>		 */}
 										</div>
                   </div>
                 </div>

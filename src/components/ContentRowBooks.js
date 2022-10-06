@@ -13,6 +13,7 @@ function ContentRowBooks(){
                 setBooks(data)})
             .catch(error => console.error(error));
     }, [])
+
   const [categories, setCategories]  = useState([]);
 	
   useEffect(() => {
@@ -22,7 +23,7 @@ function ContentRowBooks(){
       .then(data => {
         console.log("data de categorias")
         console.log(data)
-        setCategories(data)})
+        setCategories(data.countByCategory)})
       .catch(error => console.error(error));
   }, [])
 
@@ -40,6 +41,7 @@ function ContentRowBooks(){
   }, [])
 
   let cartProps = [books, categories, users];
+
   console.log("cartProps")
   console.log(cartProps)
   return (
