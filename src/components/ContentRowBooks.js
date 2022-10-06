@@ -33,6 +33,7 @@ let actorsQuantity = {
 let cartProps = [booksInDB, totalAwards, actorsQuantity];
 
 function ContentRowBooks(){
+
     return (
     
         <div className="row">

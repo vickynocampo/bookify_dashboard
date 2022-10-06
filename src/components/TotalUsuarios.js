@@ -1,16 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import imagenFondo from '../assets/images/usuarios.png';
 
 function TotalUsuarios(){
+    const [users, setUsers]  = useState([]);
+	
+useEffect(() => {
+	 console.log("se monto el componente")
+	 fetch(` http://localhost:3030/api/users`)
+		.then(response => response.json())
+		.then(data => {
+			console.log("data")
+			console.log(data)
+			setUsers(data.users)})
+		.catch(error => console.error(error));
+}, [])
+
     return(
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h5 className="m-0 font-weight-bold text-gray-800">Total Usuarios</h5>
+                    <h5 className="m-0 font-weight-bold text-gray-800">Total Usuarios {users.length}</h5>
                 </div>
                 <div className="text-center">
                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt="Usuarios"/>
                 </div>
+                <ul>
+				{users.length === 0 && <p>Cargando...</p>}
+				{
+					users.map((user, i) => {
+						return (
+							<li key={i}>
+								<h5>{user.name}</h5>
+			
+								<h6>{user.email}</h6>
+								<br/>
+							</li>
+						)			
+					})
+				}
+					
+			</ul>		
                
             </div>
         </div>

@@ -62,8 +62,8 @@ function SideBar(){
 
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to="/SearchBooks">
-                        <i className="fas fa-search"></i>
-                        <span>Buscar Libros</span></Link>
+                        {/* <i className="fas fa-search"></i> */}
+                        <span>Listado de Libros</span></Link>
                 </li>
  
                 <hr className="sidebar-divider d-none d-md-block"/>
