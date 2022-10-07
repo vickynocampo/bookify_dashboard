@@ -12,18 +12,19 @@ function LastBook(){
           .then(data => {
             console.log("data de lastbook")
             console.log(data)
-            setlastBook(data.products)})
+            setlastBook(data.products.pop())})
           .catch(error => console.error(error));
       }, [])
-
-  let libroPop = lastBook.pop();
-  console.log(libroPop)
 
 return(
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h5 className="m-0 font-weight-bold text-gray-800">Ultimo libro creado en BD</h5>
+                    <h5 className="m-0 font-weight-bold text-gray-800">Ultimo libro creado en BD: {lastBook.name}</h5>
+                    <hr/>
+                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 10 +'rem'}} src={lastBook.front} alt="Portada"/>
+                    <p>{lastBook.description}</p>
+                  
                 </div>         
                 
                 {/* <div className="card-body">
