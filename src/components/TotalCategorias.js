@@ -27,7 +27,8 @@ return (
                 <div className="row">
                  <div className="col-lg-6 mb-4">
                    <div className="card bg-dark text-white shadow">							    
-								      <h5 key={i}>{category.name}</h5>		
+								      <h5 key={i}>{category.name} - Titulos: {category.countByProducts}	</h5>	
+                    
 										</div>
                   </div>
                 </div>

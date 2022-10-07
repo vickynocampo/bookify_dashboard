@@ -23,14 +23,14 @@ return (
                             <tr>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
-                                <th>Categoria</th>
+                                {/* <th>Categoria</th> */}
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>Nombre</th>
                                 <th>Descripcion</th>
-                                <th>Categoria</th>
+                                {/* <th>Categoria</th> */}
                             </tr>
                         </tfoot>
                         <tbody>

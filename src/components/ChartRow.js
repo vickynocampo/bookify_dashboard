@@ -5,7 +5,7 @@ function ChartRow(props){
                 <tr>
                     <td>{props.name}</td>
                     <td>{props.description}</td>
-                    <td>{props.associations.id}</td>             
+                    {/* <td>{props.associations.name}</td>              */}
                 </tr>
             )
     }            
