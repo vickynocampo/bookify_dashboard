@@ -28,6 +28,8 @@ return(
 								<li key={i}>
 									<h5>{book.name}</h5>			
 									<h6>{book.description}</h6>
+									<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 10 +'rem'}} src={book.front} alt="Portada"/>
+										
 									<br/>
 								</li>
 							)			
