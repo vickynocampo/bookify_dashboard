@@ -6,6 +6,8 @@ import LastBook from './LastBook';
 import TotalUsuarios from './TotalUsuarios';
 import ContentRowBooks from './ContentRowBooks';
 import ListBooks from './ListBooks';
+import DetalleLibro from './DetalleLibro';
+import DetalleUsuario from './DetalleUsuario';
 import Search from './Search';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
@@ -32,27 +34,26 @@ function SideBar(){
                     <span>Listado Libros</span></Link>
                 </li>
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ListBooks">
+                <Link className="nav-link" to="/DetalleLibro">
                     <span>Detalle Libro</span></Link>
                 </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/TotalUsuarios">                    
-                        <span>Usuarios</span></Link>
-                </li>   
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ListBooks">
-                    <span>Detalle Usuario</span></Link>
-                </li>     
-                <li className="nav-item">
-                <Link className="nav-link" to="/TotalCategorias">                                      
-                        <span>Categorias</span>
-                    </Link>
-                </li> 
-          
                 <li className="nav-item">
                     <Link className="nav-link" to="/LastBook">                      
                         <span>Ultimo Libro Creado</span></Link>
                 </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/TotalUsuarios">                    
+                        <span>Listado Usuarios</span></Link>
+                </li>   
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/DetalleUsuario">
+                    <span>Detalle Usuario</span></Link>
+                </li>     
+                <li className="nav-item">
+                <Link className="nav-link" to="/TotalCategorias">                                      
+                        <span>Listado Categorias</span>
+                    </Link>
+                </li>          
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to="/ContentRowBooks">                   
                         <span>Totales Generales</span></Link>
@@ -84,6 +85,12 @@ function SideBar(){
                 </Route>
                 <Route path="/Search">
                     <Search />
+                </Route>
+                <Route exact path="/DetalleLibro">
+                    <DetalleLibro />
+                </Route>
+                <Route exact path="/DetalleUsuario">
+                    <DetalleUsuario />
                 </Route>
                 <Route component={NotFound} />
             </Switch>
