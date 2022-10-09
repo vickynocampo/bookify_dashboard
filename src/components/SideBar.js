@@ -33,10 +33,10 @@ function SideBar(){
                 <Link className="nav-link" to="/ListBooks">
                     <span>Listado Libros</span></Link>
                 </li>
-                <li className="nav-item nav-link">
+                {/* <li className="nav-item nav-link">
                 <Link className="nav-link" to="/DetalleLibro">
                     <span>Detalle Libro</span></Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <Link className="nav-link" to="/LastBook">                      
                         <span>Ultimo Libro Creado</span></Link>
@@ -45,10 +45,10 @@ function SideBar(){
                     <Link className="nav-link" to="/TotalUsuarios">                    
                         <span>Listado Usuarios</span></Link>
                 </li>   
-                <li className="nav-item nav-link">
+                {/* <li className="nav-item nav-link">
                 <Link className="nav-link" to="/DetalleUsuario">
                     <span>Detalle Usuario</span></Link>
-                </li>     
+                </li>      */}
                 <li className="nav-item">
                 <Link className="nav-link" to="/TotalCategorias">                                      
                         <span>Listado Categorias</span>
@@ -61,7 +61,7 @@ function SideBar(){
                 <hr className="sidebar-divider d-none d-md-block"/>
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to="/Search">                   
-                        <span>Buscador</span></Link>
+                        <span>Buscador de Libros</span></Link>
                 </li>
             </ul>
             <Switch>

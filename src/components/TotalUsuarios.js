@@ -30,11 +30,10 @@ return(
 					users.map((user, i) => {
 						return (
 							<li key={i}>
-								<h5>{user.name}</h5>
-			
-								<h6>{user.email}</h6>
+								<h6>Nombre: {user.name} {user.lastName}</h6>										
+								<h6>Email: {user.email}</h6>
 								<br/>
-								<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={user.avatar} alt="Usuarios"/>
+								<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 10 +'rem'}} src={user.avatar} alt="Usuarios"/>
 							</li>
 						)			
 					})

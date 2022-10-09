@@ -6,13 +6,13 @@ function SearchBooks(){
 	const [search, setSearch] = useState("");
 
 	useEffect( () => {
-		console.log("se monto el componente")
-		fetch(`http://localhost:3030/api/products/`)
+		console.log("se monto el componente para search")
+		fetch(`http://localhost:3030/api/products/search/${keyword}`)
 		.then(response => response.json())
 		.then(data => {
 			console.log("data")
 			console.log(data)
-			setBooks(data.products)
+			setBooks(data.books)
 		})
 		.catch(error => console.error(error));
 	}, [keyword])
@@ -46,19 +46,23 @@ function SearchBooks(){
 							<h2>Libros para la palabra: {keyword}</h2>
 						</div>
 					{
-							books && books.map((book, i) => {
+							books && books.map((books, i) => {
 								return (
 									<div className="col-sm-6 col-md-3 my-4" key={i}>
 										<div className="card shadow mb-4">
 											<div className="card-header py-3">
-												<h5 className="m-0 font-weight-bold text-gray-800">{book.name}</h5>
+												<h5 className="m-0 font-weight-bold text-gray-800">{books.title}</h5>
+												<br/>
+												<p>Precio: $ {books.price}.-</p>
+												<p>Stock: {books.stock}</p>
 											</div>
 											<div className="card-body">
 												<div className="text-center">												
-														<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '70%', height: '80%', objectFit: 'cover' }}  src={book.front} alt="Portada"/>
+														<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '70%', height: '80%', objectFit: 'cover' }}  src={books.image} alt="Portada"/>
 																
 												</div>
-												<p>{book.description}</p>
+												<p>{books.sinopsis}</p>
+									
 											</div>
 										</div>
 									</div>
