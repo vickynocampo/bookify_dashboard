@@ -22,7 +22,7 @@ return(
                     <h5 className="m-0 font-weight-bold text-gray-800">Total Usuarios {users.length}</h5>
                 </div>
                 <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt="Usuarios"/>
+                        {/* <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt="Usuarios"/> */}
                 </div>
                 <ul>
 				{users.length === 0 && <p>Cargando...</p>}
@@ -34,6 +34,7 @@ return(
 			
 								<h6>{user.email}</h6>
 								<br/>
+								<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={user.avatar} alt="Usuarios"/>
 							</li>
 						)			
 					})

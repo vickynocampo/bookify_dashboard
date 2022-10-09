@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 function SearchBooks(){
 	const [books, setBooks]  = useState([]);
 	const [keyword, setKeyword] = useState("");
-	const [search, setSearch] = useState("")
+	const [search, setSearch] = useState("");
 
 	useEffect( () => {
 		console.log("se monto el componente")
@@ -54,13 +54,9 @@ function SearchBooks(){
 												<h5 className="m-0 font-weight-bold text-gray-800">{book.name}</h5>
 											</div>
 											<div className="card-body">
-												<div className="text-center">
-													{/* <img 
-														className="img-fluid px-3 px-sm-4 mt-3 mb-4" 
-														src={movie.Poster}
-														alt={movie.Title} 
-														style={{ width: '90%', height: '400px', objectFit: 'cover' }} 
-													/> */}
+												<div className="text-center">												
+														<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: '70%', height: '80%', objectFit: 'cover' }}  src={book.front} alt="Portada"/>
+																
 												</div>
 												<p>{book.description}</p>
 											</div>
@@ -70,7 +66,7 @@ function SearchBooks(){
 							})
 						}
 					</div>
-					{ books.length === 0 && <div className="alert alert-warning text-center">No se encontraron películas</div>}
+					{ books.length === 0 && <div className="alert alert-warning text-center">No se encontraron libros...</div>}
 				</>
 							
 			}
