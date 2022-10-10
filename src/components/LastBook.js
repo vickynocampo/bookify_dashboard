@@ -20,10 +20,15 @@ return(
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
                 <div className="card-header py-3">
-                    <h5 className="m-0 font-weight-bold text-gray-800">Ultimo libro creado en BD: {lastBook.name}</h5>
+                    <h5 className="m-0 font-weight-bold text-gray-800">Ultimo libro creado en BD:</h5>
                     <hr/>
+                    <h4>Titulo: {lastBook.name}</h4>
+                    <p>Autor: {lastBook.author}</p>
+                    <p>Precio: $ {lastBook.price}.-</p>
+					<p>Stock: {lastBook.stock}</p>
                     <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 10 +'rem'}} src={lastBook.front} alt="Portada"/>
                     <p>{lastBook.description}</p>
+                
                   
                 </div>         
                 

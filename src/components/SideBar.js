@@ -9,6 +9,7 @@ import ListBooks from './ListBooks';
 import DetalleLibro from './DetalleLibro';
 import DetalleUsuario from './DetalleUsuario';
 import Search from './Search';
+import SearchUsers from './SearchUsers';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
@@ -28,9 +29,10 @@ function SideBar(){
                         <span>Dashboard - Bookify</span></Link>
                 </li>              
                 <hr className="sidebar-divider"/>
-                <div className="sidebar-heading">Acciones</div>     
+                {/* <div className="sidebar-heading">Acciones</div>      */}
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to="/ListBooks">
+                <i className="fas fa-book"></i>  
                     <span>Listado Libros</span></Link>
                 </li>
                 {/* <li className="nav-item nav-link">
@@ -38,11 +40,13 @@ function SideBar(){
                     <span>Detalle Libro</span></Link>
                 </li> */}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastBook">                      
+                    <Link className="nav-link" to="/LastBook"> 
+                    <i className="fas fa-book"></i>                       
                         <span>Ultimo Libro Creado</span></Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/TotalUsuarios">                    
+                    <Link className="nav-link" to="/TotalUsuarios">     
+                    <i className="fas fa-user"></i>                 
                         <span>Listado Usuarios</span></Link>
                 </li>   
                 {/* <li className="nav-item nav-link">
@@ -50,18 +54,27 @@ function SideBar(){
                     <span>Detalle Usuario</span></Link>
                 </li>      */}
                 <li className="nav-item">
-                <Link className="nav-link" to="/TotalCategorias">                                      
+                <Link className="nav-link" to="/TotalCategorias">   
+                <i class="fa-solid fa-objects-column"></i>
+                <i class="fas fa-filter"></i>                                
                         <span>Listado Categorias</span>
                     </Link>
                 </li>          
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowBooks">                   
+                <Link className="nav-link" to="/ContentRowBooks">     
+                <i class="fas fa-calculator"></i>              
                         <span>Totales Generales</span></Link>
                 </li>
-                <hr className="sidebar-divider d-none d-md-block"/>
+                {/* <hr className="sidebar-divider d-none d-md-block"/> */}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/Search">                   
+                <Link className="nav-link" to="/Search">     
+                <i className="fas fa-search"></i>              
                         <span>Buscador de Libros</span></Link>
+                </li>
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/SearchUsers">  
+                <i className="fas fa-search"></i>                 
+                        <span>Buscador de Usuarios</span></Link>
                 </li>
             </ul>
             <Switch>
@@ -85,6 +98,9 @@ function SideBar(){
                 </Route>
                 <Route path="/Search">
                     <Search />
+                </Route>
+                <Route path="/SearchUsers">
+                    <SearchUsers />
                 </Route>
                 <Route exact path="/DetalleLibro">
                     <DetalleLibro />
